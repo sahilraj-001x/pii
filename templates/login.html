@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+<style>
+  .aligned {
+    display: flex;
+    align-items: center;
+  }
+    a:link {
+    text-decoration: none;
+    color: white;
+  }
+    a:visited {
+    text-decoration: none;
+    color: cyan;
+  }
+    a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+  }
+   .butt {
+  height:40px;
+  width:405px;
+  font-size:30px;
+  margin-top:2%;
+  background:#8c3cac;
+  border:1px black;
+  margin-bottom:5%;
+  border-radius:4px;
+  color:white;
+  }
+   .pn {
+     height:40%;
+     width:405px;
+     font-size:30px;
+     margin-top:4%;
+  }
+</style>
+</head>
+<body style="font-family:Times New Roman; color:white; background:black">
+<p style="margin-left:30px" class="aligned">
+    <img src="static/photos/pii.png" height="100px" width="100px">
+    <span style="margin-left:20px; line-height:23px; font-size:20px"><b>Personal<br>Identifiable<br>Information</b>
+    </span>
+</p>
+<hr>
+<form method="post">
+    {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend style="padding-top:5%"></legend>
+    <div style="margin-left:35%">
+            {% if form.pro_name.errors %}
+                {{ form.pro_name(class="pn") }}
+                    {% else %}
+                {{ form.pro_name(class="pn") }}
+            {% endif %}
+    </div>
+    <div style="margin-left:35%">
+            {% if form.password.errors %}
+                {{ form.password(class="pn") }}
+                    {% else %}
+                {{ form.password(class="pn") }}
+            {% endif %}
+    </div>
+    <div class="form-check" style="margin-left:20%">
+        {{ form.remember(class="form-check-input") }}
+        {{ form.remember.label(class="form-check-label") }}
+    </div>
+                </fieldset>
+        <div style="margin-left:35%">
+            {{ form.submit(class="butt") }}
+        </div>
+</form>
+<hr>
+
+<hr>
+    <a href="/home">
+            <font style="font-size:22px; margin-left:50%">Generate code</font>
+        </a>
+</body>
+</html>

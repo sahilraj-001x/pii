@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to PII</title>
+</head>
+<style>
+ .coin {
+      position:absolute;
+      margin-top:2%;
+      margin-bottom:1%;
+      margin-left:25%;
+      transform-style: preserve-3d;
+      animation: animate 4s linear infinite;
+      }
+@keyframes animate {
+    0%{
+       transform: perspective(200000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(200000px) rotateY(360deg);
+    }
+}
+</style>
+<body bgcolor="black">
+<hr style="margin-top:2%">
+    <div class="coin">
+
+        <img src="static/photos/pii.png">
+    </div>
+<hr style="margin-top:56%">
+
+
+</body>
+</html>

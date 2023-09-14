@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Modify Data</title>
+<style>
+  .aligned {
+    display: flex;
+    align-items: center;
+  }
+    a:link {
+    text-decoration: none;
+    color: white;
+  }
+    a:visited {
+    text-decoration: none;
+    color: cyan;
+  }
+    a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+  }
+  .data_styles{
+    margin-left:35%;
+    height:40px;
+    width:400px;
+    font-size:30px;
+    margin-top:2%;
+    border-radius:5px;
+  }
+  .butt {
+    margin-left:35%;
+    height:40px;
+    width:405px;
+    font-size:30px;
+    margin-top:4%;
+    margin-bottom:6%;
+    background:#8c3cac;
+    border:1px black;
+    margin-bottom:5%;
+    border-radius:4px;
+    color:white;
+  }
+</style>
+</head>
+<body style="font-family:Times New Roman; color:white; background:black">
+<p style="margin-left:30px" class="aligned">
+    <img src="static/photos/pii.png" height="100px" width="100px">
+    <span style="margin-left:20px; line-height:23px; font-size:20px"><b>Personal<br>Identifiable<br>Information</b>
+    </span>
+</p>
+<hr>
+<div class="post__header">
+
+        {% for post in users %}
+        <div style="font-family: microsoft sans serif; margin-top:2%; margin-bottom:2%; font-size:20px">User ID: {{ post.ui }}
+
+                <img src="static/photos/bin.png" style="margin-left:75%" height="30px" width="30px">
+            <img src="static/photos/modify.png" style="margin-left:2%" height="30px" width="30px">
+        </div>
+          <div class="tweetBox">
+              <article class="media content-section">
+                 <fieldset class="form-group">
+                   <div class="article-metadata">
+                    <div class="mr-2">Project ID: {{ post.project_id }}</div>
+                  <small class="text-muted">Date of registration: {{ post.dt.strftime('%Y-%m-%d') }}</small>
+                    </div>
+                         <div class="post__body">
+                    <p class="article-content">Name: {{ post.name }}<br>Date of Birth: {{ post.dob }}</p>
+                             </div>
+                     <div class="article-title">Phone Number: {{ post.ph_no }}<br>Age: {{ post.age }}<br>Address: {{ post.address }}<br>State: {{post.state}}<br>Pincode: {{ post.pincode }}</div>
+
+                     <img src="{{ url_for('startpage_local', filename='open_cv/faces' + post.image) }}">
+                    </fieldset>
+                </article>
+              </div>
+        {% endfor %}
+
+</div>
+
+<form method="post" action="">
+
+</form>>
+<hr>
+</body>
+</html>

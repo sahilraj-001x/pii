@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Scanning face</title>
+</head>
+<style>
+ .coin {
+      position:absolute;
+      margin-top:4%;
+      margin-bottom:2%;
+      margin-left:25%;
+      transform-style: preserve-3d;
+      animation: animate 4s linear infinite;
+      }
+@keyframes animate {
+    0%{
+       transform: perspective(200000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(200000px) rotateY(360deg);
+    }
+}
+
+</style>
+<body bgcolor="black">
+
+<script>
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[9];
+    msg.volume = 0.8;
+    msg.rate = 0.5;
+    msg.pitch = 0.01;
+    msg.text = "Going to scan your face. Please remove eyewear, if any, be ready in 10 seconds";
+    msg.lang = 'en';
+    speechSynthesis.speak(msg);
+    setTimeout(function(){window.location.href="/add_data";}, 18000);
+</script>
+
+</body>
+</html>

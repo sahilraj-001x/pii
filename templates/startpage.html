@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+<style>
+  .aligned {
+    display: flex;
+    align-items: center;
+  }
+    a:link {
+    text-decoration: none;
+    color: white;
+  }
+    a:visited {
+    text-decoration: none;
+    color: cyan;
+  }
+    a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+  }
+</style>
+</head>
+<body style="font-family:Times New Roman; color:white; background:black">
+<p style="margin-left:30px" class="aligned">
+    <img src="static/photos/pii.png" height="100px" width="100px">
+    <span style="margin-left:20px; line-height:23px; font-size:20px"><b>Personal<br>Identifiable<br>Information</b>
+    </span>
+</p>
+<hr>
+
+<form action="/test_for_pyaudio">
+    <button style="margin-left:35%; height:40px; width:405px; font-size:30px; margin-top:5%; background:#711A75; border:1px black; margin-bottom:2%; border-radius:4px; color:white">Add Data</button>
+</form>
+<form action="/modify_data">
+    <button style="margin-left:35%; height:40px; width:405px; font-size:30px; margin-top:2%; background:#711A75; border:1px black; margin-bottom:2%; border-radius:4px; color:white">Modify Data</button>
+</form>
+    <form action="/modify_data">
+    <button style="margin-left:35%; height:40px; width:405px; font-size:30px; margin-top:2%; background:#711A75; border:1px black; margin-bottom:5%; border-radius:4px; color:white">Delete Data</button>
+    </form>
+
+<hr>
+    {% if current_user.is_authenticated %}
+        <a href="/logout">
+            <font style="font-size:22px; margin-left:50%">Generate another code</font>
+        </a>
+    {% else %}
+
+    {% endif %}
+<script>
+var msg = new SpeechSynthesisUtterance();
+var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[9];
+msg.volume = 0.8;
+msg.rate = 0.5;
+msg.pitch = 2;
+msg.text = "";
+msg.lang = 'en';
+speechSynthesis.speak(msg);
+</script>
+</body>
+</html>

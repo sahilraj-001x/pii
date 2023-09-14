@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Center page</title>
+<style>
+  .aligned {
+    display: flex;
+    align-items: center;
+  }
+    a:link {
+    text-decoration: none;
+    color: white;
+  }
+    a:visited {
+    text-decoration: none;
+    color: cyan;
+  }
+    a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+  }
+</style>
+</head>
+<body style="font-family:Times New Roman; color:white; background:black">
+<p style="margin-left:30px" class="aligned">
+    <img src="static/photos/pii.png" height="100px" width="100px">
+    <span style="margin-left:20px; line-height:23px; font-size:20px"><b>Personal<br>Identifiable<br>Information</b>
+    </span>
+</p>
+<hr>
+<form action="/startpage">
+    <input style="margin-left:35%; height:40px; width:400px; font-size:30px; margin-top:5%" placeholder="Institute/Project Name" name="project" required>
+<br><br>
+
+<br>
+<!--    <input style="margin-left:35%; height:40px; width:400px; font-size:30px; margin-top:2%" placeholder="Category">-->
+
+    <button style="margin-left:35%; height:40px; width:405px; font-size:30px; margin-top:2%; background:#8c3cac; border:1px black; margin-bottom:5%; border-radius:4px; color:white">
+            Generate Code
+    </button>
+</form>
+    <button style="margin-left:35%; height:30px; width:178px; font-size:20px; margin-top:2%; background:#8c3cac; border:1px black; margin-bottom:5%; border-radius:4px; color:white">Local</button>
+    <button style="margin-left:3%; height:30px; width:178px; font-size:20px; margin-top:2%; background:#8c3cac; border:1px black; margin-bottom:5%; border-radius:4px; color:white">Server</button>
+
+
+<hr>
+    <a href="/startpage">
+        <font style="font-size:22px; margin-left:50%">Already have a code</font>
+    </a>
+
+</body>
+</html>

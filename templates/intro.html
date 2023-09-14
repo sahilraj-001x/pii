@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Introduction to PII</title>
+</head>
+<style>
+ .coin {
+      position:absolute;
+      margin-top:2%;
+      margin-bottom:1%;
+      margin-left:25%;
+      transform-style: preserve-3d;
+      animation: animate 4s linear infinite;
+      }
+@keyframes animate {
+    0%{
+       transform: perspective(200000px) rotateY(0deg);
+    }
+    100%{
+        transform: perspective(200000px) rotateY(360deg);
+    }
+}
+
+
+
+
+</style>
+<body bgcolor="black">
+<hr style="margin-top:2%">
+    <div class="coin">
+        <img src="pii.png">
+    </div>
+<hr style="margin-top:56%">
+
+<!--<script>-->
+<!--    var msg = new SpeechSynthesisUtterance();-->
+<!--    var voices = window.speechSynthesis.getVoices();-->
+<!--    msg.voice = voices[14];-->
+<!--    msg.volume = 0.8;-->
+<!--    msg.rate = 0.85;-->
+<!--    msg.pitch = 0.01;-->
+<!--    msg.text = "Welcome to Pye. It is developed to automate, the manual process of entering data, so that people don't have to wait in long queue, and no error occur, while entering the data. After getting the details of different users, Pye generates a unique eye d for everyone, which is sent directly in their email. Pye uses various algorithms, to compress and encrypt the data, before saving it in database, and for securing the network connection in the web.  Hello, I am your virtual assistant, to help you know Pye better.";-->
+<!--    msg.lang = 'en';-->
+<!--    speechSynthesis.speak(msg);-->
+<!--    setTimeout(function(){window.location.href="/home";},32000);-->
+<!--</script>-->
+
+</body>
+</html>

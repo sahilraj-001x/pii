@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Homepage</title>
+<style>
+  .aligned {
+    display: flex;
+    align-items: center;
+  }
+    a:link {
+    text-decoration: none;
+    color: white;
+  }
+    a:visited {
+    text-decoration: none;
+    color: cyan;
+  }
+    a:hover {
+    text-decoration: underline;
+    color: lightgreen;
+  }
+  .pn {
+     height:40%;
+     width:405px;
+     font-size:30px;
+     margin-top:2%;
+     border-radius:5px;
+  }
+  .cat {
+     height:40%;
+     width:120px;
+     font-size:30px;
+  }
+  .cat_1 {
+     font-size:30px;
+     margin-left:10%
+  }
+  .butt {
+  height:40px;
+  width:405px;
+  font-size:30px;
+  margin-top:2%;
+  background:#8c3cac;
+  border:1px black;
+  margin-bottom:5%;
+  border-radius:4px;
+  color:white;
+  }
+</style>
+</head>
+<body style="font-family:Times New Roman; color:white; background:black">
+<p style="margin-left:30px" class="aligned">
+    <img src="static/photos/pii.png" height="100px" width="100px">
+    <span style="margin-left:20px; line-height:23px; font-size:20px"><b>Personal<br>Identifiable<br>Information</b>
+    </span>
+</p>
+<hr>
+<form method="post">
+    {{ form.hidden_tag() }}
+            <fieldset class="form-group">
+                <legend style="padding-top:5%"></legend>
+    <div style="margin-left:35%">
+            {% if form.pro_name.errors %}
+                {{ form.pro_name(class="pn") }}
+                    {% else %}
+                {{ form.pro_name(class="pn") }}
+            {% endif %}
+    </div>
+    <div style="margin-left:35%">
+            {% if form.password.errors %}
+                {{ form.password(class="pn") }}
+                    {% else %}
+                {{ form.password(class="pn") }}
+            {% endif %}
+    </div>
+
+<br><br>
+    <div style="margin-left:35%">
+          {{form.category.label(class="cat")}}
+          {{ form.category(class="cat cat_1")}}
+          {% for error in form.category.errors %}
+          <span>[{{ error }}]</span>
+          {% endfor %}
+    </div>
+
+<br>
+                </fieldset>
+        <div style="margin-left:35%">
+            {{ form.submit(class="butt") }}
+        </div>
+</form>
+<form action="/login">
+    <div style="margin-left:35%">
+            {{ form.submit2(class="butt") }}
+        </div>
+</form>
+<hr>
+<a href="/login">
+        <font style="font-size:22px; margin-left:50%">Already have a code</font>
+    </a>
+
+<script>
+var msg = new SpeechSynthesisUtterance();
+var voices = window.speechSynthesis.getVoices();
+msg.voice = voices[14];
+msg.volume = 0.8;
+msg.rate = 0.85;
+msg.pitch = 0.01;
+msg.text = "You have 20 seconds to generate code, after that, the session will be timed out.";
+msg.lang = 'en';
+speechSynthesis.speak(msg);
+setTimeout(function(){window.location.href="/timed_out";},19000);
+</script>
+</body>
+</html>

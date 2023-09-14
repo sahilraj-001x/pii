@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Session Timed Out</title>
+</head>
+<body style="font-family:microsoft sans serif">
+<center>
+    <h1>
+        Error 404
+    </h1>
+        <br>
+    <h2>
+        Session timed out
+    </h2>
+</center>
+<script>
+    var msg = new SpeechSynthesisUtterance();
+    var voices = window.speechSynthesis.getVoices();
+    msg.voice = voices[14];
+    msg.volume = 0.8;
+    msg.rate = 0.85;
+    msg.pitch = 0.01;
+    msg.text = "Re-establishing connection";
+    msg.lang = 'en';
+    speechSynthesis.speak(msg);
+    setTimeout(function(){window.location.href="/home";},6000);
+</script>
+</body>
+</html>
